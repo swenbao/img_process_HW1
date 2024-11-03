@@ -1,3 +1,7 @@
+# 好的教學
+# https://www.youtube.com/watch?v=-AuwMJAqjJc
+# https://www.youtube.com/watch?v=Ud5f1P1lr8Q
+
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
