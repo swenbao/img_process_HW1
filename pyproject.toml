@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "hw1"
+version = "0.1.0"
+description = ""
+authors = ["swenbao <essence.lost.0b@icloud.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.8.20"
+opencv-contrib-python = "^4.10.0.84"
+matplotlib = "3.7.3"
+numpy = "1.23.5"
+pyqt5 = "5.15.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
