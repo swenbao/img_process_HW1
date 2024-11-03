@@ -32,9 +32,7 @@ def gaussian_filter(img_path, kernel_radius=1, sigmaX=1, sigmaY=1):
 
     plt.show()
 
-
-
-# for m= 1~5
-
-# Mild Blur (small kernel, low sigma)
-gaussian_filter('/Users/swenbaola/Desktop/a.png', kernel_radius=1, sigmaX=100, sigmaY=100)
+# 用 Gaussian Noise 去對比看起來比較明顯
+# 我剛剛一直懷疑自己
+gaussian_filter('/Users/swenbaola/Desktop/gn.png', kernel_radius=1, sigmaX=2, sigmaY=2)
+gaussian_filter('/Users/swenbaola/Desktop/gn.png', kernel_radius=500, sigmaX=2, sigmaY=2)
