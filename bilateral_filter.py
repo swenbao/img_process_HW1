@@ -1,6 +1,10 @@
-# 好的講解
+# 好的講解，第二部超讚
 # https://youtu.be/LjbYKWAQA5s?si=7KLfi71UZ8fzJrZN
 # https://youtu.be/7FP7ndMEfsc?si=U001Yecv8QiAbSq0
+# bilateral filter 是 Spatial Gaussian * Brightness Gaussian
+# 還沒有到非常理解
+# 大概是 intensity 差異大的地方不要做模糊（weight 低）
+# intensity 差異小的地方做模糊（weight 高）
 
 import cv2
 import numpy as np
