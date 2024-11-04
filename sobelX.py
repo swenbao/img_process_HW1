@@ -1,3 +1,6 @@
+# 好教學
+# https://youtu.be/uihBwtPIBxM?si=4RtzmQ3D7l6s8OZW
+
 import cv2
 import numpy as np
 
@@ -29,7 +32,7 @@ def sobel_X(img_path):
     # 這邊我們要先將圖片的大小設定好
     # type 要設定成 float64, 因為等等要做除法, 這樣可以先確保精確度
     # 最後再轉回 uint8
-    sobel_x_output = np.zeros_like(img, dtype=np.float64)
+    sobel_x_output = np.zeros_like(gray_image, dtype=np.float64)
 
     # loop over the image to apply the Sobel filter
     for i in range(img.shape[0]): # height
@@ -55,12 +58,12 @@ def sobel_X(img_path):
     normalized_output3 = ((sobel_x_output - sobel_x_min) / (sobel_x_max - sobel_x_min) * 255)
 
     # save the output image
-    cv2.imwrite("sobel_x.jpg", sobel_x_output)
-    cv2.imwrite("sobel_x1.jpg", normalized_output1)
-    cv2.imwrite("sobel_x2.jpg", normalized_output2)
-    cv2.imwrite("sobel_x3.jpg", normalized_output3)
+    # cv2.imwrite("sobel_x.jpg", sobel_x_output)
+    # cv2.imwrite("sobel_x1.jpg", normalized_output1)
+    # cv2.imwrite("sobel_x2.jpg", normalized_output2)
+    # cv2.imwrite("sobel_x3.jpg", normalized_output3)
 
-    return normalized_output2
+    return sobel_x_output, normalized_output2
 
 sobel_X("./Dataset_OpenCvDl_Hw1/Q3_image/building.jpg")
 
