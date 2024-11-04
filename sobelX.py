@@ -42,23 +42,25 @@ def sobel_X(img_path):
     # 如果不 abs 可以保留方向
     # 第一種方法 -> abs the values | normalize to 0-255 | convert to uint8
     normalized_output1 = np.abs(sobel_x_output) / np.max(sobel_x_output) * 255
-    normalized_output1 = np.uint8(normalized_output1)
 
-    # 第二種方法
+    # 第二種方法，最接近投影片
     # abs the values | change outlier to bound | convert to uint8
-    normalized_output2 = np.clip(np.abs(sobel_x_output), 0, 255).astype(np.uint8)
+    normalized_output2 = np.clip(np.abs(sobel_x_output), 0, 255)
 
     # 第三種方法（保留方向）
     # Scale Sobel output to range [0, 255] for display
     sobel_x_min = sobel_x_output.min()
     sobel_x_max = sobel_x_output.max()
     # Normalize to 0-255 range
-    normalized_output3 = ((sobel_x_output - sobel_x_min) / (sobel_x_max - sobel_x_min) * 255).astype(np.uint8)
+    normalized_output3 = ((sobel_x_output - sobel_x_min) / (sobel_x_max - sobel_x_min) * 255)
 
     # save the output image
+    cv2.imwrite("sobel_x.jpg", sobel_x_output)
     cv2.imwrite("sobel_x1.jpg", normalized_output1)
     cv2.imwrite("sobel_x2.jpg", normalized_output2)
     cv2.imwrite("sobel_x3.jpg", normalized_output3)
+
+    return normalized_output2
 
 sobel_X("./Dataset_OpenCvDl_Hw1/Q3_image/building.jpg")
 
